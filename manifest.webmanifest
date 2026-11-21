@@ -1,0 +1,26 @@
+{
+  "name": "MiniChat — 友達とチャット",
+  "short_name": "MiniChat",
+  "description": "友達とチャット・写真共有・既読確認",
+  "id": "/minichat/",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#2677e8",
+  "theme_color": "#2677e8",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
