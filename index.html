@@ -2,18 +2,18 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#2677e8"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="MiniChat"><meta name="description" content="友達とチャットできるMiniChat"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/icon-180.png"><link rel="icon" type="image/png" href="./icons/icon-192.png"><link rel="apple-touch-startup-image" href="./splash/splash-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"><link rel="apple-touch-startup-image" href="./splash/splash-1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)"><title>MiniChat v3.2</title>
+<meta name="theme-color" content="#2677e8"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="MiniChat"><meta name="description" content="友達とチャットできるMiniChat"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/icon-180.png"><link rel="icon" type="image/png" href="./icons/icon-192.png"><link rel="apple-touch-startup-image" href="./splash/splash-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"><link rel="apple-touch-startup-image" href="./splash/splash-1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)"><title>MiniChat v3.3</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#eef3fa;color:#172b46}header{background:#2677e8;color:white;padding:calc(14px + env(safe-area-inset-top)) 16px 14px;font-weight:700;font-size:21px}main{max-width:690px;margin:auto;padding:14px}.panel{background:#fff;padding:15px;border-radius:16px;margin-bottom:12px;box-shadow:0 2px 12px #183c7612}h3{font-size:16px;margin:2px 0 10px}input,button{font:inherit;border-radius:11px;padding:11px}input{width:100%;min-width:0;border:1px solid #ccd7e6}button{border:0;background:#2677e8;color:#fff;font-weight:600;cursor:pointer}button.secondary{background:#e6eefc;color:#1b5ac1}button.danger{background:#fbe8e7;color:#a52f2f}button:disabled{opacity:.5}.row{display:flex;align-items:center;gap:8px}.row>*{min-width:0}.grow{flex:1}.help{font-size:12px;color:#64748b;line-height:1.5}.hidden{display:none!important}#status{font-size:13px;color:#a33629;white-space:pre-wrap;min-height:20px}.roomItem,.memberItem{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #e8edf4}.roomItem:last-child,.memberItem:last-child{border:0}.small{font-size:12px;color:#64748b}.roomButton{max-width:100%;text-align:left;background:#eaf2ff;color:#173a6c}#messages{min-height:245px;height:46dvh;overflow-y:auto;padding:10px;border-radius:12px;background:#f5f8fc;display:flex;flex-direction:column;gap:10px}.bubble{max-width:87%;align-self:flex-start;border-radius:13px;background:#fff;padding:10px 12px;overflow-wrap:anywhere;white-space:pre-wrap}.bubble.mine{align-self:flex-end;background:#d5e8ff}.meta,.receipt{font-size:11px;color:#53667b;margin-bottom:4px}.receipt{margin:5px 0 0;text-align:right;color:#2369af}.photo{max-width:100%;height:auto;border-radius:8px;display:block;max-height:290px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#9aa8b8;margin-right:5px}.dot.online{background:#1aaf5d}#sendForm{display:flex;gap:7px;margin-top:9px;align-items:center}#message{flex:1}#photo{display:none}.uploadLabel{display:inline-flex;align-items:center;justify-content:center;background:#e7efff;color:#1b5ac1;border-radius:11px;padding:11px;cursor:pointer}.tag{display:inline-block;background:#e9f6ee;color:#197340;padding:3px 7px;border-radius:999px;font-size:11px}.adminRow{display:flex;gap:5px;flex-wrap:wrap}.adminRow button{font-size:12px;padding:7px}#members{margin-top:6px}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#eef3fa;color:#172b46}header{background:#2677e8;color:white;padding:calc(14px + env(safe-area-inset-top)) 16px 14px;font-weight:700;font-size:21px}main{max-width:690px;margin:auto;padding:14px}.panel{background:#fff;padding:15px;border-radius:16px;margin-bottom:12px;box-shadow:0 2px 12px #183c7612}h3{font-size:16px;margin:2px 0 10px}input,button{font:inherit;border-radius:11px;padding:11px}input{width:100%;min-width:0;border:1px solid #ccd7e6}button{border:0;background:#2677e8;color:#fff;font-weight:600;cursor:pointer}button.secondary{background:#e6eefc;color:#1b5ac1}button.danger{background:#fbe8e7;color:#a52f2f}button:disabled{opacity:.5}.row{display:flex;align-items:center;gap:8px}.row>*{min-width:0}.grow{flex:1}.help{font-size:12px;color:#64748b;line-height:1.5}.hidden{display:none!important}#status{font-size:13px;color:#a33629;white-space:pre-wrap;min-height:20px}.roomItem,.memberItem{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #e8edf4}.roomItem:last-child,.memberItem:last-child{border:0}.small{font-size:12px;color:#64748b}.roomButton{max-width:100%;text-align:left;background:#eaf2ff;color:#173a6c}#messages{min-height:245px;height:46dvh;overflow-y:auto;padding:10px;border-radius:12px;background:#f5f8fc;display:flex;flex-direction:column;gap:10px}.bubble{max-width:87%;align-self:flex-start;border-radius:13px;background:#fff;padding:10px 12px;overflow-wrap:anywhere;white-space:pre-wrap}.bubble.mine{align-self:flex-end;background:#d5e8ff}.meta,.receipt{font-size:11px;color:#53667b;margin-bottom:4px}.receipt{margin:5px 0 0;text-align:right;color:#2369af}.photo{max-width:100%;height:auto;border-radius:8px;display:block;max-height:290px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#9aa8b8;margin-right:5px}.dot.online{background:#1aaf5d}#sendForm{display:flex;gap:7px;margin-top:9px;align-items:center}#message{flex:1}#photo{display:none}.uploadLabel{display:inline-flex;align-items:center;justify-content:center;background:#e7efff;color:#1b5ac1;border-radius:11px;padding:11px;cursor:pointer}.tag{display:inline-block;background:#e9f6ee;color:#197340;padding:3px 7px;border-radius:999px;font-size:11px}.adminRow{display:flex;gap:5px;flex-wrap:wrap}.adminRow button{font-size:12px;padding:7px}#members{margin-top:6px}.roomItem{gap:10px}.roomButton{background:transparent;color:#172b46;padding:6px 0;flex:1;display:flex;align-items:center;gap:10px;text-align:left}.roomAvatar{width:46px;height:46px;border-radius:50%;background:#dceaff;color:#1b5ac1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:20px}.roomInfo{flex:1;min-width:0}.roomName{font-weight:700;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.roomPreview{font-size:12px;color:#64748b;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:4px}.roomSide{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}.unread{background:#2677e8;color:#fff;border-radius:999px;font-size:11px;min-width:20px;padding:3px 6px;text-align:center;font-weight:700}.listHelp{font-size:11px;color:#68788d;margin-top:8px}
 #startup{position:fixed;inset:0;background:linear-gradient(155deg,#2677e8,#164baf);color:white;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .25s ease}#startup.out{opacity:0;pointer-events:none}#startupIcon{width:96px;height:96px;border-radius:25px;box-shadow:0 12px 35px #001c4b44}#startup strong{font-size:26px}#startup small{opacity:.85}#pwaBar{background:#fff;border:1px solid #cddcf0;padding:10px 12px;border-radius:14px;margin:0 0 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}#pwaBar button{font-size:13px;padding:8px 12px}#updateNotice{font-size:12px;color:#245b9f;flex:1;min-width:120px}#versionText{font-size:11px;color:#64748b}
 </style>
 </head><body>
 <div id="startup" aria-hidden="true"><img id="startupIcon" src="./icons/icon-192.png" alt=""><strong>MiniChat</strong><small>つながる、いつでも。</small></div>
-<header>💬 MiniChat <span style="font-size:12px;opacity:.85">v3.2</span></header><main>
-<div id="pwaBar"><span id="versionText">v3.2</span><span id="updateNotice" role="status">最新版を確認できます</span><button id="checkUpdate" class="secondary" type="button">更新確認</button><button id="forceUpdate" type="button">アプリを更新 ↻</button></div>
+<header>💬 MiniChat <span style="font-size:12px;opacity:.85">v3.3</span></header><main>
+<div id="pwaBar"><span id="versionText">v3.3</span><span id="updateNotice" role="status">最新版を確認できます</span><button id="checkUpdate" class="secondary" type="button">更新確認</button><button id="forceUpdate" type="button">アプリを更新 ↻</button></div>
 <section class="panel"><label for="name">あなたの表示名 / Your name</label><input id="name" maxlength="24" placeholder="例：はるか" autocomplete="nickname"><p class="help">名前はこの端末に保存されます。</p></section>
-<section class="panel" id="lobby"><h3>💬 Chat List</h3><div id="roomList" class="help">読み込み中...</div>
-<p class="help">友達からもらった招待リンクをここに貼り付けると、ホーム画面からでも同じチャットに参加できます。</p>
+<section class="panel" id="lobby"><h3>💬 Chat List — 相手の名前</h3><div id="roomList" class="help">読み込み中...</div>
+<p class="listHelp">相手の名前・最後のメッセージ・時刻・未読数を表示します。オンラインは最終活動の目安です。未読は直近50件までの概算です。</p><p class="help">友達からもらった招待リンクをここに貼り付けると、ホーム画面からでも同じチャットに参加できます。</p>
 <label for="inviteInput" class="small">🔗 招待リンク（?room=...&invite=...）</label>
 <input id="inviteInput" type="url" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="招待リンクをペースト">
 <div class="row" style="margin-top:8px"><button id="joinLink" class="grow">既存のチャットに参加</button><button id="pasteLink" type="button" class="secondary">貼り付け</button></div>
@@ -33,7 +33,7 @@ const firebaseConfig = {
 };
 
 // PWA: refresh/navigation prefers the network; a version check alerts to new deployments.
-const PWA_VERSION="3.2.0";
+const PWA_VERSION="3.3.0";
 let workerRegistration=null;
 let versionCheckBusy=false;
 let pendingVersion="";
@@ -97,6 +97,8 @@ const status = s => { $("status").textContent=s; };
 const app=initializeApp(firebaseConfig), auth=getAuth(app), db=getFirestore(app);
 let uid="",roomId="",roomData=null, messages=[],readers=new Map(),members=new Map(),roomList=[];
 let unsubs=[],unsubList=null,lastReadId="",activeTimer=null;
+const listWatchers=new Map(), listDetails=new Map();
+const MAX_LIST_WATCHES=15, UNREAD_WINDOW=50;
 const lastRoomKey="minichat-last-room-v3";
 const refRoom=id=>doc(db,"rooms",id);
 const refMember=(id,u)=>doc(db,"rooms",id,"members",u);
@@ -111,8 +113,65 @@ $("name").addEventListener("input",()=>localStorage.setItem("minichat-name",$("n
 function stopRoom(){unsubs.forEach(f=>f());unsubs=[];if(activeTimer)clearInterval(activeTimer);activeTimer=null;roomId="";roomData=null;messages=[];readers.clear();members.clear();lastReadId="";}
 function back(){localStorage.removeItem(lastRoomKey);stopRoom();$("chat").classList.add("hidden");$("admin").classList.add("hidden");$("lobby").classList.remove("hidden");const url=new URL(location.href);url.searchParams.delete("room");url.searchParams.delete("invite");history.replaceState(null,"",url);status("");}
 $("back").onclick=back;
-function renderList(){const area=$("roomList");area.replaceChildren();if(!roomList.length){area.textContent="まだチャットがありません。";return;}for(const r of roomList){const wrap=document.createElement("div");wrap.className="roomItem";const b=document.createElement("button");b.className="roomButton";b.textContent=r.title||"Chat";b.onclick=()=>openRoom(r.id).catch(e=>status("開けませんでした。招待リンクから再参加してください: "+errText(e)));const del=document.createElement("button");del.className="secondary";del.textContent="一覧から削除";del.onclick=async()=>{if(!confirm("一覧から非表示にしますか？ チャット本体は削除されません。"))return;try{await deleteDoc(refList(r.id));}catch(e){status(errText(e));}};wrap.append(b,del);area.append(wrap);}}
-function watchList(){if(unsubList)unsubList();unsubList=onSnapshot(collection(db,"userRooms",uid,"items"),snap=>{roomList=snap.docs.map(x=>({id:x.id,...x.data()}));renderList();},e=>status("Chat List: "+errText(e)));}
+// Chat List v3.3: members + last messages + my read receipt are watched per joined room.
+// No message/photo content is duplicated into public room metadata.
+function messageDate(ts){return ts?.toDate?.()||null;}
+function timeLabel(ts){const d=messageDate(ts);if(!d)return "";const n=new Date();return d.toDateString()===n.toDateString()?d.toLocaleTimeString("ja-JP",{hour:"2-digit",minute:"2-digit"}):d.toLocaleDateString("ja-JP",{month:"numeric",day:"numeric"});}
+function onlineRecently(data){const ms=data?.lastActive?.toMillis?.();return Number.isFinite(ms)&&Date.now()-ms>=0&&Date.now()-ms<100000;}
+function listViewData(room){
+ const state=listDetails.get(room.id)||{};
+ const others=[...(state.members||new Map()).entries()].filter(([id])=>id!==uid);
+ const otherNames=others.map(([,m])=>m.name?.trim()||"Guest");
+ const label=otherNames.length===1?otherNames[0]:otherNames.length>1?(state.title&&state.title!=="Chat"?state.title:`グループ (${otherNames.length+1}人)`):(state.title&&state.title!=="Chat"?state.title:"友達を招待");
+ const isOnline=others.some(([,m])=>onlineRecently(m));
+ const docs=state.messages||[];
+ const newest=docs[0]?.data();
+ const preview=!newest?"まだメッセージはありません":(newest.kind==="photo"?"📷 写真":(newest.text||""));
+ const readAt=state.readAt?.toMillis?.()||0;
+ const unread=docs.reduce((count,d)=>{const m=d.data(), t=m.createdAt?.toMillis?.();return count+(m.uid!==uid&&t&&t>readAt?1:0);},0);
+ return {label,isOnline,preview,time:timeLabel(newest?.createdAt),unread,group:others.length>1};
+}
+function renderList(){
+ const area=$("roomList");area.replaceChildren();
+ if(!roomList.length){area.textContent="まだチャットがありません。";return;}
+ for(const r of roomList){
+  const v=listViewData(r),wrap=document.createElement("div"),b=document.createElement("button"),avatar=document.createElement("span"),info=document.createElement("span"),name=document.createElement("span"),prev=document.createElement("span"),side=document.createElement("span"),time=document.createElement("span"),del=document.createElement("button");
+  wrap.className="roomItem";b.className="roomButton";avatar.className="roomAvatar";info.className="roomInfo";name.className="roomName";prev.className="roomPreview";side.className="roomSide";time.className="small";
+  avatar.textContent=v.group?"👥":Array.from(v.label)[0]||"💬";
+  name.textContent=(v.isOnline?"🟢 ":"")+v.label;
+  prev.textContent=v.preview;time.textContent=v.time;
+  if(v.unread){const count=document.createElement("span");count.className="unread";count.textContent=v.unread>=UNREAD_WINDOW?`${UNREAD_WINDOW}+`:String(v.unread);side.append(count);}
+  info.append(name,prev);side.prepend(time);b.append(avatar,info,side);
+  b.onclick=()=>openRoom(r.id).catch(e=>status("開けませんでした。招待リンクから再参加してください: "+errText(e)));
+  del.className="secondary";del.style.cssText="padding:7px;font-size:11px";del.textContent="非表示";
+  del.onclick=async()=>{if(!confirm("一覧から非表示にしますか？ チャット本体は削除されません。"))return;try{await deleteDoc(refList(r.id));}catch(e){status(errText(e));}};
+  wrap.append(b,del);area.append(wrap);
+ }
+}
+function stopListRoom(id){const callbacks=listWatchers.get(id)||[];callbacks.forEach(unsub=>unsub());listWatchers.delete(id);listDetails.delete(id);}
+function startListRoom(id){
+ if(listWatchers.has(id)||!safeId(id))return;
+ const detail={members:new Map(),messages:[],readAt:null,title:""};listDetails.set(id,detail);
+ const notify=()=>renderList();
+ const failed=()=>{detail.previewError=true;notify();};
+ const listeners=[];
+ listeners.push(onSnapshot(refRoom(id),snap=>{detail.title=snap.data()?.title||"";notify();},failed));
+ listeners.push(onSnapshot(collection(db,"rooms",id,"members"),snap=>{detail.members=new Map(snap.docs.map(d=>[d.id,d.data()]));notify();},failed));
+ // Bounded recent window avoids subscribing to entire lifetime message history.
+ listeners.push(onSnapshot(query(collection(db,"rooms",id,"messages"),orderBy("createdAt","desc"),limit(UNREAD_WINDOW)),snap=>{detail.messages=snap.docs;notify();},failed));
+ listeners.push(onSnapshot(doc(db,"rooms",id,"readers",uid),snap=>{detail.readAt=snap.data()?.lastReadAt||null;notify();},failed));
+ listWatchers.set(id,listeners);
+}
+function watchList(){
+ if(unsubList)unsubList();
+ unsubList=onSnapshot(collection(db,"userRooms",uid,"items"),snap=>{
+  roomList=snap.docs.map(x=>({id:x.id,...x.data()})).sort((a,b)=>(b.updatedAt?.toMillis?.()||0)-(a.updatedAt?.toMillis?.()||0));
+  const wanted=new Set(roomList.slice(0,MAX_LIST_WATCHES).map(r=>r.id));
+  for(const id of listWatchers.keys())if(!wanted.has(id))stopListRoom(id);
+  for(const id of wanted)startListRoom(id);
+  renderList();
+ },e=>status("Chat List: "+errText(e)));
+}
 function parseInvite(value){
   const raw=(value||"").trim();if(!raw)throw Error("招待リンクを貼り付けてください");
   let url;try{url=new URL(raw);}catch{throw Error("正しい招待URLを貼り付けてください");}
