@@ -16,12 +16,14 @@
 </main>
 <script type="module">
 // ★ Firebaseコンソールの「ウェブアプリ設定」の値に置き換える
+
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAdf2g_PDHZ9kDdd_8qddmKZwKYDWFKxmY",
+  authDomain: "minichat4857.firebaseapp.com",
+  projectId: "minichat4857",
+  appId: "1:457604557349:web:fe18906c7966308ed1adcc"
 };
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, collection, addDoc, query, orderBy, limit, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
