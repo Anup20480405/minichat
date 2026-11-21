@@ -1,5 +1,5 @@
-/* MiniChat v3.3 - network-first app shell, offline fallback for previously opened pages. */
-const CACHE_NAME="minichat-pwa-3.3.0";
+/* MiniChat v3.4 - network-first app shell, offline fallback for previously opened pages. */
+const CACHE_NAME="minichat-pwa-3.4.0";
 const APP_FILES=["./","./index.html","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-180.png","./splash/splash-1170x2532.png","./splash/splash-1290x2796.png"];
 self.addEventListener("install",event=>{
   event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting()));
