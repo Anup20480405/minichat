@@ -2,17 +2,17 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#2677e8"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="MiniChat"><meta name="description" content="友達とチャットできるMiniChat"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/icon-180.png"><link rel="icon" type="image/png" href="./icons/icon-192.png"><link rel="apple-touch-startup-image" href="./splash/splash-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"><link rel="apple-touch-startup-image" href="./splash/splash-1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)"><title>MiniChat v3.3</title>
+<meta name="theme-color" content="#2677e8"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="MiniChat"><meta name="description" content="友達とチャットできるMiniChat"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/icon-180.png"><link rel="icon" type="image/png" href="./icons/icon-192.png"><link rel="apple-touch-startup-image" href="./splash/splash-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"><link rel="apple-touch-startup-image" href="./splash/splash-1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)"><title>MiniChat v3.4</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#eef3fa;color:#172b46}header{background:#2677e8;color:white;padding:calc(14px + env(safe-area-inset-top)) 16px 14px;font-weight:700;font-size:21px}main{max-width:690px;margin:auto;padding:14px}.panel{background:#fff;padding:15px;border-radius:16px;margin-bottom:12px;box-shadow:0 2px 12px #183c7612}h3{font-size:16px;margin:2px 0 10px}input,button{font:inherit;border-radius:11px;padding:11px}input{width:100%;min-width:0;border:1px solid #ccd7e6}button{border:0;background:#2677e8;color:#fff;font-weight:600;cursor:pointer}button.secondary{background:#e6eefc;color:#1b5ac1}button.danger{background:#fbe8e7;color:#a52f2f}button:disabled{opacity:.5}.row{display:flex;align-items:center;gap:8px}.row>*{min-width:0}.grow{flex:1}.help{font-size:12px;color:#64748b;line-height:1.5}.hidden{display:none!important}#status{font-size:13px;color:#a33629;white-space:pre-wrap;min-height:20px}.roomItem,.memberItem{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #e8edf4}.roomItem:last-child,.memberItem:last-child{border:0}.small{font-size:12px;color:#64748b}.roomButton{max-width:100%;text-align:left;background:#eaf2ff;color:#173a6c}#messages{min-height:245px;height:46dvh;overflow-y:auto;padding:10px;border-radius:12px;background:#f5f8fc;display:flex;flex-direction:column;gap:10px}.bubble{max-width:87%;align-self:flex-start;border-radius:13px;background:#fff;padding:10px 12px;overflow-wrap:anywhere;white-space:pre-wrap}.bubble.mine{align-self:flex-end;background:#d5e8ff}.meta,.receipt{font-size:11px;color:#53667b;margin-bottom:4px}.receipt{margin:5px 0 0;text-align:right;color:#2369af}.photo{max-width:100%;height:auto;border-radius:8px;display:block;max-height:290px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#9aa8b8;margin-right:5px}.dot.online{background:#1aaf5d}#sendForm{display:flex;gap:7px;margin-top:9px;align-items:center}#message{flex:1}#photo{display:none}.uploadLabel{display:inline-flex;align-items:center;justify-content:center;background:#e7efff;color:#1b5ac1;border-radius:11px;padding:11px;cursor:pointer}.tag{display:inline-block;background:#e9f6ee;color:#197340;padding:3px 7px;border-radius:999px;font-size:11px}.adminRow{display:flex;gap:5px;flex-wrap:wrap}.adminRow button{font-size:12px;padding:7px}#members{margin-top:6px}.roomItem{gap:10px}.roomButton{background:transparent;color:#172b46;padding:6px 0;flex:1;display:flex;align-items:center;gap:10px;text-align:left}.roomAvatar{width:46px;height:46px;border-radius:50%;background:#dceaff;color:#1b5ac1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:20px}.roomInfo{flex:1;min-width:0}.roomName{font-weight:700;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.roomPreview{font-size:12px;color:#64748b;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:4px}.roomSide{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}.unread{background:#2677e8;color:#fff;border-radius:999px;font-size:11px;min-width:20px;padding:3px 6px;text-align:center;font-weight:700}.listHelp{font-size:11px;color:#68788d;margin-top:8px}
 #startup{position:fixed;inset:0;background:linear-gradient(155deg,#2677e8,#164baf);color:white;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .25s ease}#startup.out{opacity:0;pointer-events:none}#startupIcon{width:96px;height:96px;border-radius:25px;box-shadow:0 12px 35px #001c4b44}#startup strong{font-size:26px}#startup small{opacity:.85}#pwaBar{background:#fff;border:1px solid #cddcf0;padding:10px 12px;border-radius:14px;margin:0 0 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}#pwaBar button{font-size:13px;padding:8px 12px}#updateNotice{font-size:12px;color:#245b9f;flex:1;min-width:120px}#versionText{font-size:11px;color:#64748b}
 </style>
 </head><body>
 <div id="startup" aria-hidden="true"><img id="startupIcon" src="./icons/icon-192.png" alt=""><strong>MiniChat</strong><small>つながる、いつでも。</small></div>
-<header>💬 MiniChat <span style="font-size:12px;opacity:.85">v3.3</span></header><main>
-<div id="pwaBar"><span id="versionText">v3.3</span><span id="updateNotice" role="status">最新版を確認できます</span><button id="checkUpdate" class="secondary" type="button">更新確認</button><button id="forceUpdate" type="button">アプリを更新 ↻</button></div>
+<header>💬 MiniChat <span style="font-size:12px;opacity:.85">v3.4</span></header><main>
+<div id="pwaBar"><span id="versionText">v3.4</span><span id="updateNotice" role="status">最新版を確認できます</span><button id="checkUpdate" class="secondary" type="button">更新確認</button><button id="forceUpdate" type="button">アプリを更新 ↻</button></div>
 <section class="panel"><label for="name">あなたの表示名 / Your name</label><input id="name" maxlength="24" placeholder="例：はるか" autocomplete="nickname"><p class="help">名前はこの端末に保存されます。</p></section>
-<section class="panel" id="lobby"><h3>💬 Chat List — 相手の名前</h3><div id="roomList" class="help">読み込み中...</div>
+<section class="panel" id="lobby"><h3>💬 Chat List — 相手の名前</h3><div id="roomList" class="help">読み込み中...</div><div class="row" style="margin-top:10px"><button id="toggleHidden" type="button" class="secondary">📂 非表示チャット一覧を表示</button></div><div id="hiddenList" class="hidden" style="margin-top:10px"></div>
 <p class="listHelp">相手の名前・最後のメッセージ・時刻・未読数を表示します。オンラインは最終活動の目安です。未読は直近50件までの概算です。</p><p class="help">友達からもらった招待リンクをここに貼り付けると、ホーム画面からでも同じチャットに参加できます。</p>
 <label for="inviteInput" class="small">🔗 招待リンク（?room=...&invite=...）</label>
 <input id="inviteInput" type="url" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="招待リンクをペースト">
@@ -33,7 +33,7 @@ const firebaseConfig = {
 };
 
 // PWA: refresh/navigation prefers the network; a version check alerts to new deployments.
-const PWA_VERSION="3.3.0";
+const PWA_VERSION="3.4.0";
 let workerRegistration=null;
 let versionCheckBusy=false;
 let pendingVersion="";
@@ -95,7 +95,8 @@ import { getFirestore, doc, collection, setDoc, getDoc, updateDoc, deleteDoc, ad
 const $ = id => document.getElementById(id);
 const status = s => { $("status").textContent=s; };
 const app=initializeApp(firebaseConfig), auth=getAuth(app), db=getFirestore(app);
-let uid="",roomId="",roomData=null, messages=[],readers=new Map(),members=new Map(),roomList=[];
+let uid="",roomId="",roomData=null, messages=[],readers=new Map(),members=new Map(),roomList=[],hiddenRooms=[];
+let showHidden=false;
 let unsubs=[],unsubList=null,lastReadId="",activeTimer=null;
 const listWatchers=new Map(), listDetails=new Map();
 const MAX_LIST_WATCHES=15, UNREAD_WINDOW=50;
@@ -113,7 +114,7 @@ $("name").addEventListener("input",()=>localStorage.setItem("minichat-name",$("n
 function stopRoom(){unsubs.forEach(f=>f());unsubs=[];if(activeTimer)clearInterval(activeTimer);activeTimer=null;roomId="";roomData=null;messages=[];readers.clear();members.clear();lastReadId="";}
 function back(){localStorage.removeItem(lastRoomKey);stopRoom();$("chat").classList.add("hidden");$("admin").classList.add("hidden");$("lobby").classList.remove("hidden");const url=new URL(location.href);url.searchParams.delete("room");url.searchParams.delete("invite");history.replaceState(null,"",url);status("");}
 $("back").onclick=back;
-// Chat List v3.3: members + last messages + my read receipt are watched per joined room.
+// Chat List v3.4: members + last messages + my read receipt are watched per joined room.
 // No message/photo content is duplicated into public room metadata.
 function messageDate(ts){return ts?.toDate?.()||null;}
 function timeLabel(ts){const d=messageDate(ts);if(!d)return "";const n=new Date();return d.toDateString()===n.toDateString()?d.toLocaleTimeString("ja-JP",{hour:"2-digit",minute:"2-digit"}):d.toLocaleDateString("ja-JP",{month:"numeric",day:"numeric"});}
@@ -132,6 +133,19 @@ function listViewData(room){
  return {label,isOnline,preview,time:timeLabel(newest?.createdAt),unread,group:others.length>1};
 }
 function renderList(){
+ const hiddenArea=$("hiddenList");hiddenArea.replaceChildren();
+ $("toggleHidden").textContent=showHidden?`📂 非表示一覧を閉じる (${hiddenRooms.length})`:`📂 非表示チャット一覧を表示 (${hiddenRooms.length})`;
+ hiddenArea.classList.toggle("hidden",!showHidden);
+ if(showHidden){
+  if(!hiddenRooms.length)hiddenArea.textContent="非表示のチャットはありません。以前のバージョンで非表示にしたものは招待リンクから再参加してください。";
+  for(const r of hiddenRooms){
+   const line=document.createElement("div"),label=document.createElement("span"),btn=document.createElement("button");
+   line.className="roomItem";label.className="grow";label.textContent=(r.title&&r.title!=="Chat"?r.title:"チャット")+" · "+r.id.slice(0,8);
+   btn.className="secondary";btn.textContent="↩ 再表示";
+   btn.onclick=async()=>{btn.disabled=true;try{await updateDoc(refList(r.id),{hidden:false,updatedAt:serverTimestamp()});}catch(e){status("再表示できません: "+errText(e));}finally{btn.disabled=false;}};
+   line.append(label,btn);hiddenArea.append(line);
+  }
+ }
  const area=$("roomList");area.replaceChildren();
  if(!roomList.length){area.textContent="まだチャットがありません。";return;}
  for(const r of roomList){
@@ -144,7 +158,7 @@ function renderList(){
   info.append(name,prev);side.prepend(time);b.append(avatar,info,side);
   b.onclick=()=>openRoom(r.id).catch(e=>status("開けませんでした。招待リンクから再参加してください: "+errText(e)));
   del.className="secondary";del.style.cssText="padding:7px;font-size:11px";del.textContent="非表示";
-  del.onclick=async()=>{if(!confirm("一覧から非表示にしますか？ チャット本体は削除されません。"))return;try{await deleteDoc(refList(r.id));}catch(e){status(errText(e));}};
+  del.onclick=async()=>{if(!confirm("一覧から非表示にしますか？ チャット本体は削除されません。"))return;try{await updateDoc(refList(r.id),{hidden:true,updatedAt:serverTimestamp()});}catch(e){status(errText(e));}};
   wrap.append(b,del);area.append(wrap);
  }
 }
@@ -162,10 +176,12 @@ function startListRoom(id){
  listeners.push(onSnapshot(doc(db,"rooms",id,"readers",uid),snap=>{detail.readAt=snap.data()?.lastReadAt||null;notify();},failed));
  listWatchers.set(id,listeners);
 }
+$("toggleHidden").onclick=()=>{showHidden=!showHidden;renderList();};
 function watchList(){
  if(unsubList)unsubList();
  unsubList=onSnapshot(collection(db,"userRooms",uid,"items"),snap=>{
-  roomList=snap.docs.map(x=>({id:x.id,...x.data()})).sort((a,b)=>(b.updatedAt?.toMillis?.()||0)-(a.updatedAt?.toMillis?.()||0));
+  const all=snap.docs.map(x=>({id:x.id,...x.data()})).sort((a,b)=>(b.updatedAt?.toMillis?.()||0)-(a.updatedAt?.toMillis?.()||0));
+  roomList=all.filter(x=>x.hidden!==true);hiddenRooms=all.filter(x=>x.hidden===true);
   const wanted=new Set(roomList.slice(0,MAX_LIST_WATCHES).map(r=>r.id));
   for(const id of listWatchers.keys())if(!wanted.has(id))stopListRoom(id);
   for(const id of wanted)startListRoom(id);
@@ -182,7 +198,7 @@ function parseInvite(value){
 }
 $("joinLink").onclick=async()=>{if(!uid)return status("接続準備中です");$("joinLink").disabled=true;try{const {id,secret}=parseInvite($("inviteInput").value);await openRoom(id,secret);$("inviteInput").value="";}catch(e){status("参加できません: "+errText(e));}finally{$("joinLink").disabled=false;}};
 $("pasteLink").onclick=async()=>{try{$("inviteInput").value=await navigator.clipboard.readText();}catch{status("入力欄を長押しして『ペースト』を選んでください");}};
-async function saveList(id,title){await setDoc(refList(id),{title:title||"Chat",updatedAt:serverTimestamp()});}
+async function saveList(id,title){await setDoc(refList(id),{title:title||"Chat",hidden:false,updatedAt:serverTimestamp()});}
 function renderMembers(){const area=$("members");area.replaceChildren();const online=Array.from(members.entries()).map(([id,d])=>({id,d,now:!!d.lastActive?.toMillis && Date.now()-d.lastActive.toMillis()<100000}));$("presence").replaceChildren();const span=document.createElement("span");span.textContent=online.map(x=>`${x.now?"🟢":"⚪"} ${x.d.name||"Guest"}`).join(" · ")||"参加者なし";$("presence").append(span);for(const x of online){const line=document.createElement("div");line.className="memberItem";const nm=document.createElement("span");nm.className="small";nm.textContent=`${x.now?"🟢":"⚪"} ${x.d.name||"Guest"}${x.id===uid?" (you)":""}`;line.append(nm);if(isOwner()&&x.id!==uid){const ban=document.createElement("button");ban.className="danger";ban.textContent="ブロック";ban.onclick=async()=>{if(!confirm("このユーザーをブロックしますか？"))return;try{await setDoc(doc(db,"rooms",roomId,"bans",x.id),{uid:x.id,bannedAt:serverTimestamp()});await deleteDoc(refMember(roomId,x.id));status("ブロックしました");}catch(e){status("ブロック失敗: "+errText(e));}};line.append(ban);}area.append(line);}}
 function renderMessages(){const area=$("messages");area.replaceChildren();const allReaders=[...readers.entries()];for(const item of messages){const m=item.data(),mine=m.uid===uid,bubble=document.createElement("div");bubble.className="bubble"+(mine?" mine":"");const meta=document.createElement("div");meta.className="meta";meta.textContent=(m.name||"Guest")+(m.createdAt?.toDate?" · "+m.createdAt.toDate().toLocaleTimeString("ja-JP",{hour:"2-digit",minute:"2-digit"}):"");bubble.append(meta);if(m.kind==="photo"&&typeof m.imageData==="string"&&/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(m.imageData)){const im=document.createElement("img");im.className="photo";im.alt="送信された写真";im.src=m.imageData;bubble.append(im);}else{const txt=document.createElement("div");txt.textContent=m.text||"";bubble.append(txt);}if(mine){const receipt=document.createElement("div");receipt.className="receipt";const sent=m.createdAt?.toMillis?.();const seen=!!sent&&allReaders.some(([rid,v])=>rid!==uid&&v.lastReadAt?.toMillis?.()>=sent);receipt.textContent=seen?"✓✓ Seen":"✓ Sent";bubble.append(receipt);}if(isOwner()){const del=document.createElement("button");del.className="danger";del.style.cssText="font-size:11px;padding:5px;margin-top:5px";del.textContent="削除";del.onclick=async()=>{if(!confirm("このメッセージを削除しますか？"))return;try{await deleteDoc(doc(db,"rooms",roomId,"messages",item.id));}catch(e){status(errText(e));}};bubble.append(del);}area.append(bubble);}area.scrollTop=area.scrollHeight;}
 async function markRead(){if(!uid||!roomId||document.visibilityState!=="visible"||!messages.length)return;const last=messages.at(-1);if(!last.data().createdAt?.toMillis?.()||lastReadId===last.id)return;lastReadId=last.id;try{await setDoc(doc(db,"rooms",roomId,"readers",uid),{name:myName(),lastReadAt:serverTimestamp()});}catch(e){lastReadId="";status("Seen: "+errText(e));}}
