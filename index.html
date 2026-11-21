@@ -4,27 +4,24 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#2677e8"><title>MiniChat</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#eef3fa;color:#172b46}header{background:#2677e8;color:white;padding:calc(15px + env(safe-area-inset-top)) 16px 16px;font-size:21px;font-weight:700}main{max-width:680px;margin:auto;padding:16px}.panel{background:white;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 2px 12px #183c7612}input,button{font:inherit;padding:12px;border-radius:12px}input{border:1px solid #ccd7e6;width:100%;min-width:0}button{border:0;background:#2677e8;color:white;font-weight:600}button:disabled{opacity:.45}button.secondary{background:#e5eefc;color:#1b5ac1}.controls{display:flex;gap:8px;margin-top:10px}.controls>*{flex:1}.help{font-size:13px;color:#66768d}#status{min-height:20px;color:#b34735;font-size:13px}#messages{height:48dvh;min-height:230px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:12px;background:#f5f8fc;border-radius:12px}.bubble{background:#fff;padding:9px 12px;border-radius:14px;max-width:85%;align-self:flex-start;overflow-wrap:anywhere;white-space:pre-wrap}.bubble.mine{background:#d5e8ff;align-self:flex-end}.meta{font-size:11px;color:#53667b;margin-bottom:4px}.hidden{display:none}#sendForm{display:flex;gap:8px;margin-top:10px}#sendForm input{flex:1}#sendForm button{flex-shrink:0}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#eef3fa;color:#172b46}header{background:#2677e8;color:white;padding:calc(15px + env(safe-area-inset-top)) 16px 16px;font-size:21px;font-weight:700}main{max-width:680px;margin:auto;padding:16px}.panel{background:white;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 2px 12px #183c7612}input,button{font:inherit;padding:12px;border-radius:12px}input{border:1px solid #ccd7e6;width:100%;min-width:0}button{border:0;background:#2677e8;color:white;font-weight:600;cursor:pointer}button:disabled{opacity:.45}button.secondary{background:#e5eefc;color:#1b5ac1}.controls{display:flex;gap:8px;margin-top:10px}.controls>*{flex:1}.help{font-size:13px;color:#66768d}#status{min-height:20px;color:#b34735;font-size:13px}#messages{height:48dvh;min-height:230px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:12px;background:#f5f8fc;border-radius:12px}.bubble{background:#fff;padding:9px 12px;border-radius:14px;max-width:85%;align-self:flex-start;overflow-wrap:anywhere;white-space:pre-wrap}.bubble.mine{background:#d5e8ff;align-self:flex-end}.meta{font-size:11px;color:#53667b;margin-bottom:4px}.receipt{font-size:11px;color:#356dab;margin-top:5px;text-align:right}.hidden{display:none}#sendForm{display:flex;gap:8px;margin-top:10px}#sendForm input{flex:1}#sendForm button{flex-shrink:0}
 </style>
 </head>
 <body>
 <header>💬 MiniChat</header><main>
 <section class="panel"><label for="name">あなたの表示名</label><input id="name" maxlength="24" placeholder="例：はるか" autocomplete="nickname"><p class="help">名前はこのiPhoneのブラウザに保存されます。</p></section>
 <section class="panel" id="lobby"><button id="create">新しいチャットを作成</button><p class="help">友達から招待された場合は、届いたURLを開くだけで参加できます。</p></section>
-<section class="panel hidden" id="chat"><div class="controls" style="margin-top:0"><button class="secondary" id="share">招待リンクを共有</button><button class="secondary" id="leave">退出</button></div><p class="help">招待リンクを知っている人は会話を見られます。リンクは信頼できる友達だけに送ってね。</p><div id="messages" aria-live="polite"></div><form id="sendForm"><input id="message" maxlength="1000" placeholder="メッセージを入力" autocomplete="off" required><button id="send" type="submit">送信</button></form></section>
+<section class="panel hidden" id="chat"><div class="controls" style="margin-top:0"><button class="secondary" id="share">招待リンクを共有</button><button class="secondary" id="leave">退出</button></div><p class="help">✓✓ 既読は相手の端末でチャット画面が表示された目安です。招待リンクを知る人は会話を見られます。</p><div id="messages" aria-live="polite"></div><form id="sendForm"><input id="message" maxlength="1000" placeholder="メッセージを入力" autocomplete="off" required><button id="send" type="submit">送信</button></form></section>
 <p id="status" role="status"></p>
 </main>
 <script type="module">
-// ★ Firebaseコンソールの「ウェブアプリ設定」の値に置き換える
-  
+// Firebase コンソール > プロジェクトの設定 > マイアプリ > Config の値を確認してください。
 const firebaseConfig = {
   apiKey: "AIzaSyAdf2g_PDHz9kDdd_8qddmKZwKYDWfKxmY",
   authDomain: "minichat4857.firebaseapp.com",
   projectId: "minichat4857",
   appId: "1:457604557349:web:fe18906c7966308ed1adcc"
 };
-
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, collection, addDoc, query, orderBy, limit, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
@@ -33,55 +30,112 @@ const status = text => { $("status").textContent = text; };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-let uid = "", roomId = "", unsubscribe = null;
+let uid = "", roomId = "", unsubMessages = null, unsubReads = null;
+let currentMessages = [], readers = new Map(), lastMarkedMessageId = null;
 $("name").value = localStorage.getItem("minichat-name") || "";
 $("name").addEventListener("input", () => localStorage.setItem("minichat-name", $("name").value.trim()));
+const cleanName = () => $("name").value.trim().slice(0,24) || "ゲスト";
+function renderMessages() {
+  const area = $("messages");
+  area.replaceChildren();
+  for (const item of currentMessages) {
+    const msg = item.data();
+    const mine = msg.uid === uid;
+    const bubble = document.createElement("div");
+    bubble.className = "bubble" + (mine ? " mine" : "");
+    const meta = document.createElement("div"); meta.className = "meta";
+    meta.textContent = (msg.name || "ゲスト") + (msg.createdAt?.toDate ? " · " + msg.createdAt.toDate().toLocaleTimeString("ja-JP", {hour:"2-digit",minute:"2-digit"}) : "");
+    const body = document.createElement("div"); body.textContent = msg.text || "";
+    bubble.append(meta, body);
+    if (mine) {
+      const receipt = document.createElement("div"); receipt.className = "receipt";
+      const sentAt = msg.createdAt?.toMillis?.();
+      // Any *other* logged-in visitor who opened the room after the message was sent.
+      const seen = !!sentAt && [...readers.entries()].some(([readerUid, data]) =>
+        readerUid !== uid && data.lastReadAt?.toMillis?.() >= sentAt);
+      receipt.textContent = seen ? "✓✓ 既読 / Seen" : "✓ 送信済み / Sent";
+      bubble.append(receipt);
+    }
+    area.append(bubble);
+  }
+  area.scrollTop = area.scrollHeight;
+}
+async function markRead() {
+  if (!uid || !roomId || document.visibilityState !== "visible") return;
+  const latest = currentMessages.at(-1);
+  if (!latest || !latest.data().createdAt?.toMillis?.()) return;
+  if (lastMarkedMessageId === latest.id) return;
+  lastMarkedMessageId = latest.id;
+  const room = roomId;
+  try {
+    await setDoc(doc(db,"rooms",room,"readers",uid),
+      {name:cleanName(),lastReadAt:serverTimestamp()});
+  } catch (err) {
+    if (room === roomId) {
+      lastMarkedMessageId = null;
+      status("既読の記録に失敗しました。Firestore Rulesを確認してください: " + err.message);
+    }
+  }
+}
 function setRoom(id) {
-  if (unsubscribe) { unsubscribe(); unsubscribe = null; }
-  roomId = id;
+  if (unsubMessages) { unsubMessages(); unsubMessages = null; }
+  if (unsubReads) { unsubReads(); unsubReads = null; }
+  roomId = id; currentMessages = []; readers = new Map(); lastMarkedMessageId = null;
+  $("messages").replaceChildren();
   $("lobby").classList.toggle("hidden", !!id);
   $("chat").classList.toggle("hidden", !id);
   const url = new URL(location.href);
-  if (id) url.searchParams.set("room", id); else url.searchParams.delete("room");
-  history.replaceState(null, "", url);
-  if (!id) return;
+  if (id) url.searchParams.set("room",id); else url.searchParams.delete("room");
+  history.replaceState(null,"",url);
+  if (!id) { status(""); return; }
   status("メッセージを読み込み中...");
-  const q = query(collection(db, "rooms", id, "messages"), orderBy("createdAt", "asc"), limit(200));
-  unsubscribe = onSnapshot(q, snapshot => {
-    $("messages").replaceChildren();
-    snapshot.forEach(item => {
-      const msg = item.data();
-      const bubble = document.createElement("div");
-      bubble.className = "bubble" + (msg.uid === uid ? " mine" : "");
-      const meta = document.createElement("div"); meta.className = "meta";
-      meta.textContent = (msg.name || "ゲスト") + (msg.createdAt?.toDate ? " · " + msg.createdAt.toDate().toLocaleTimeString("ja-JP", {hour:"2-digit",minute:"2-digit"}) : "");
-      const body = document.createElement("div"); body.textContent = msg.text || "";
-      bubble.append(meta, body); $("messages").append(bubble);
-    });
-    $("messages").scrollTop = $("messages").scrollHeight;
-    status("");
-  }, err => status("読み込みに失敗しました。招待リンクやFirestoreのルールを確認してください。"));
+  unsubReads = onSnapshot(collection(db,"rooms",id,"readers"), snapshot => {
+    if (roomId !== id) return;
+    readers = new Map(snapshot.docs.map(d => [d.id,d.data()]));
+    renderMessages();
+  }, err => status("既読の読み込みに失敗しました: " + err.message));
+  const q = query(collection(db,"rooms",id,"messages"),orderBy("createdAt","asc"),limit(200));
+  unsubMessages = onSnapshot(q, snapshot => {
+    if (roomId !== id) return;
+    currentMessages = snapshot.docs;
+    renderMessages(); status("");
+    // A receipt means the messages were displayed on this device, not guaranteed read.
+    markRead();
+  }, err => status("メッセージの読み込みに失敗しました: " + err.message));
 }
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && roomId) {
+    lastMarkedMessageId = null;
+    markRead();
+  }
+});
 $("create").onclick = async () => {
   if (!uid) return status("接続準備中です。");
   const id = crypto.randomUUID();
-  try { await setDoc(doc(db,"rooms",id), { createdBy: uid, createdAt: serverTimestamp() }); setRoom(id); }
-  catch (e) { status("チャット作成失敗: " + e.message); }
+  try {
+    await setDoc(doc(db,"rooms",id),{createdBy:uid,createdAt:serverTimestamp()});
+    setRoom(id);
+  } catch (err) { status("チャット作成失敗: " + err.message); }
 };
 $("share").onclick = async () => {
   const url = location.href;
-  try { if (navigator.share) await navigator.share({title:"MiniChatに参加",url});
-        else {await navigator.clipboard.writeText(url); status("招待リンクをコピーしました！");} }
-  catch (e) { if (e.name !== "AbortError") prompt("このリンクをコピーして送ってください",url); }
+  try {
+    if (navigator.share) await navigator.share({title:"MiniChatに参加",url});
+    else { await navigator.clipboard.writeText(url); status("招待リンクをコピーしました！"); }
+  } catch (err) { if (err.name !== "AbortError") prompt("このリンクをコピーして送ってください",url); }
 };
 $("leave").onclick = () => setRoom("");
 $("sendForm").onsubmit = async e => {
-  e.preventDefault(); const name = $("name").value.trim(), text = $("message").value.trim();
+  e.preventDefault();
+  const name = $("name").value.trim(), text = $("message").value.trim();
   if (!name) return status("先に表示名を入力してね。");
   if (!text || !roomId || !uid) return;
   $("send").disabled = true;
-  try { await addDoc(collection(db,"rooms",roomId,"messages"), {name, text, uid, createdAt:serverTimestamp()}); $("message").value=""; status(""); }
-  catch (err) { status("送信に失敗しました: " + err.message); }
+  try {
+    await addDoc(collection(db,"rooms",roomId,"messages"),
+      {name,text,uid,createdAt:serverTimestamp()});
+    $("message").value=""; status("");
+  } catch (err) { status("送信に失敗しました: " + err.message); }
   finally { $("send").disabled = false; }
 };
 (async () => {
