@@ -1,4 +1,1 @@
-{
-  "version": "3.2.0",
-  "notes": "PWA support, icon, splash, update button"
-}
+{"version":"3.3.0","notes":"相手の名前・最後のメッセージ・時刻・未読数（最大50件）・オンライン表示"}
